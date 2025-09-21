@@ -347,8 +347,8 @@ function showDownloadModal() {
 
 // 开始下载
 function startDownload(arch) {
-    // 这里应该是实际的下载链接
-    const downloadUrls = {
+    // 使用配置文件中的下载链接
+    const downloadUrls = window.CONFIG?.download?.downloadUrls || {
         'universal': '#',
         'apple-silicon': '#',
         'intel': '#'
@@ -368,17 +368,7 @@ function startDownload(arch) {
     }, 1000);
 }
 
-// 显示下载进度
-function startDownload(arch) {
-    showDownloadProgress(arch);
-    
-    // 模拟下载过程
-    setTimeout(() => {
-        // 这里应该调用实际的下载 API
-        console.log(`开始下载 ${arch} 版本`);
-        showDownloadSuccess();
-    }, 2000);
-}
+// 显示下载进度（移除重复定义）
 
 // 显示下载进度
 function showDownloadProgress(arch) {
@@ -821,6 +811,305 @@ window.addEventListener('error', function(e) {
     // 这里可以添加错误报告逻辑
 });
 
+// 微信联系功能
+function showWechatContact() {
+    const modal = document.createElement('div');
+    modal.className = 'wechat-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>微信反馈</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="wechat-info">
+                        <div class="wechat-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h4>添加微信获取支持</h4>
+                        <p>扫描二维码或搜索微信号，我们将为你提供最贴心的技术支持</p>
+                        <div class="contact-options">
+                            <div class="contact-option">
+                                <span class="option-label">微信号：</span>
+                                <span class="option-value">cursorx_support</span>
+                                <button class="copy-btn" onclick="copyToClipboard('cursorx_support')">复制</button>
+                            </div>
+                            <div class="contact-option">
+                                <span class="option-label">备用邮箱：</span>
+                                <span class="option-value">15019280942@163.com</span>
+                                <button class="copy-btn" onclick="copyToClipboard('15019280942@163.com')">复制</button>
+                            </div>
+                        </div>
+                        <div class="wechat-note">
+                            <p>💡 添加时请备注"CursorX用户"，我们会优先处理你的问题</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 添加样式
+    const style = document.createElement('style');
+    style.textContent = `
+        .wechat-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal-content {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 24px 0;
+            margin-bottom: 16px;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1D1D1F;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #8E8E93;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            background: #F2F2F7;
+            color: #1D1D1F;
+        }
+        
+        .modal-body {
+            padding: 0 24px 24px;
+        }
+        
+        .wechat-info {
+            text-align: center;
+        }
+        
+        .wechat-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #1AAD19, #4CAF50);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .wechat-info h4 {
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1D1D1F;
+        }
+        
+        .wechat-info > p {
+            margin: 0 0 24px;
+            color: #6E6E73;
+            line-height: 1.5;
+        }
+        
+        .contact-options {
+            margin-bottom: 20px;
+        }
+        
+        .contact-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: #F8F9FF;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .option-label {
+            font-weight: 500;
+            color: #1D1D1F;
+        }
+        
+        .option-value {
+            flex: 1;
+            margin: 0 12px;
+            color: #007AFF;
+            font-family: monospace;
+        }
+        
+        .copy-btn {
+            background: #007AFF;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .copy-btn:hover {
+            background: #0056CC;
+        }
+        
+        .wechat-note {
+            background: #FFF3CD;
+            border: 1px solid #FFE69C;
+            border-radius: 12px;
+            padding: 12px;
+        }
+        
+        .wechat-note p {
+            margin: 0;
+            color: #856404;
+            font-size: 0.875rem;
+        }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+    
+    // 关闭模态框
+    const closeModal = () => {
+        modal.style.animation = 'modalSlideOut 0.2s ease';
+        setTimeout(() => {
+            document.body.removeChild(modal);
+            document.head.removeChild(style);
+        }, 200);
+    };
+    
+    modal.querySelector('.modal-close').addEventListener('click', closeModal);
+    modal.querySelector('.modal-overlay').addEventListener('click', closeModal);
+    
+    // 添加关闭动画
+    const closeStyle = document.createElement('style');
+    closeStyle.textContent = `
+        @keyframes modalSlideOut {
+            from {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.9) translateY(-20px);
+            }
+        }
+    `;
+    document.head.appendChild(closeStyle);
+}
+
+// 复制到剪贴板功能
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // 显示复制成功提示
+        const toast = document.createElement('div');
+        toast.className = 'copy-toast';
+        toast.innerHTML = `
+            <div class="toast-content">
+                <div class="toast-icon">✅</div>
+                <div class="toast-text">已复制到剪贴板</div>
+            </div>
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            .copy-toast {
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                z-index: 10001;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+                border: 1px solid #34C759;
+                animation: toastSlideIn 0.3s ease;
+                max-width: 200px;
+            }
+            
+            .toast-content {
+                padding: 16px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            .toast-icon {
+                font-size: 20px;
+            }
+            
+            .toast-text {
+                font-weight: 500;
+                color: #1D1D1F;
+            }
+        `;
+        
+        document.head.appendChild(style);
+        document.body.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.style.animation = 'toastSlideOut 0.3s ease';
+            setTimeout(() => {
+                if (document.body.contains(toast)) {
+                    document.body.removeChild(toast);
+                }
+                if (document.head.contains(style)) {
+                    document.head.removeChild(style);
+                }
+            }, 300);
+        }, 2000);
+    }).catch(err => {
+        console.error('复制失败:', err);
+    });
+}
+
 // 导出函数供全局使用
 window.downloadMacOS = downloadMacOS;
+window.showWechatContact = showWechatContact;
 
