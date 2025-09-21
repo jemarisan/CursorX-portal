@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CursorX - 革命性的 macOS 文本插入点光标自定义工具。一比一复刻系统光标，支持自定义样式、HUD 抬头显示等功能，提升您的输入体验。">
+    <meta name="keywords" content="CursorX,macOS,光标,文本插入点,自定义,HUD,输入法,苹果">
+    <meta name="author" content="CursorX Team">
+    
+    <!-- SEO 优化 -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CursorX - 革命性的 macOS 光标体验">
+    <meta property="og:description" content="一比一复刻系统光标，支持自定义样式、HUD 抬头显示等功能，提升您的输入体验。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cursorx.app">
+    <meta property="og:image" content="https://cursorx.app/og-image.png">
+    <meta property="og:site_name" content="CursorX">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CursorX - 革命性的 macOS 光标体验">
+    <meta name="twitter:description" content="一比一复刻系统光标，支持自定义样式、HUD 抬头显示等功能，提升您的输入体验。">
+    <meta name="twitter:image" content="https://cursorx.app/og-image.png">
+    
+    <title>CursorX - 革命性的 macOS 光标体验</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CursorX",
+      "description": "革命性的 macOS 光标体验，一比一复刻系统光标，支持自定义样式、HUD 抬头显示等功能",
+      "operatingSystem": "macOS",
+      "applicationCategory": "ProductivityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "CursorX Team"
+      },
+      "url": "https://cursorx.app",
+      "downloadUrl": "https://cursorx.app/#download"
+    }
+    </script>
+</head>
+<body>
+    <!-- 面包屑导航 -->
+    <nav aria-label="面包屑导航" style="display: none;">
+        <ol>
+            <li><a href="/">首页</a></li>
+            <li>CursorX</li>
+        </ol>
+    </nav>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://via.placeholder.com/32x32/007AFF/FFFFFF?text=CX" alt="CursorX" class="logo-icon">
+                <span class="logo-text">CursorX</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">功能</a>
+                <a href="#download" class="nav-link">下载</a>
+                <a href="#support" class="nav-link">支持</a>
+            </div>
+            <div class="nav-menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    革命性的 <span class="highlight">macOS 光标</span> 体验
+                </h1>
+                <p class="hero-subtitle">
+                    一比一复刻系统光标，支持自定义样式、HUD 抬头显示等功能，
+                    <br>让您的输入体验更加个性化和高效
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15L8 11L9.41 9.59L11 11.17V3H13V11.17L14.59 9.59L16 11L12 15Z" fill="currentColor"/>
+                            <path d="M5 20H19V18H5V20Z" fill="currentColor"/>
+                        </svg>
+                        免费下载
+                    </a>
+                    <a href="#features" class="btn btn-secondary">了解更多</a>
+                </div>
+                <div class="hero-badge">
+                    <span class="badge">macOS 12.0+</span>
+                    <span class="badge">Apple Silicon</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cursor-demo">
+                    <img src="https://via.placeholder.com/600x400/F5F5F7/8E8E93?text=CursorX+Demo" alt="CursorX 演示" class="demo-image">
+                    <div class="cursor-overlay">
+                        <div class="custom-cursor"></div>
+                        <div class="hud-bubble">
+                            <div class="hud-content">
+                                <span class="hud-item">🇺🇸</span>
+                                <span class="hud-item">14:32</span>
+                                <span class="hud-item">🔋85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">强大的功能特性</h2>
+                <p class="section-subtitle">让您的光标变得与众不同</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">一比一复刻</h3>
+                    <p class="feature-description">完美复刻系统光标，用户无感知的切换体验，与原生光标完全一致</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="9" cy="9" r="1" fill="currentColor"/>
+                            <circle cx="15" cy="9" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">自定义样式</h3>
+                    <p class="feature-description">支持圆形、三角形、矩形等多种样式，可自定义颜色、大小和透明度</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 9H15V15H9V9Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">HUD 抬头显示</h3>
+                    <p class="feature-description">智能显示输入法、时间、电量等信息，支持多种布局和动画效果</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">毛玻璃效果</h3>
+                    <p class="feature-description">支持系统默认、毛玻璃、液态玻璃三种风格，符合苹果设计美学</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            <path d="M19.4 15A1.65 1.65 0 0 0 21 13.65A1.65 1.65 0 0 0 19.4 12A1.65 1.65 0 0 0 17.75 13.65A1.65 1.65 0 0 0 19.4 15Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4.6 15A1.65 1.65 0 0 1 3 13.65A1.65 1.65 0 0 1 4.6 12A1.65 1.65 0 0 1 6.25 13.65A1.65 1.65 0 0 1 4.6 15Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">全局适配</h3>
+                    <p class="feature-description">支持所有 macOS 应用，包括原生应用和 Chromium 应用</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 11L12 14L22 4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M21 12V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">实时跟随</h3>
+                    <p class="feature-description">毫秒级响应，实时跟随系统光标位置，无延迟无感知</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title">立即体验 CursorX</h2>
+                <p class="download-subtitle">免费下载，立即开始您的个性化光标之旅</p>
+                
+                <div class="download-buttons">
+                    <a href="#" class="download-btn macos" onclick="downloadMacOS()">
+                        <div class="download-btn-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="download-btn-content">
+                            <div class="download-btn-text">Download for macOS</div>
+                            <div class="download-btn-version">v1.0.0 • 12.5 MB</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="download-info">
+                    <p class="system-requirements">
+                        系统要求：macOS 12.0 或更高版本 • 支持 Apple Silicon 和 Intel 芯片
+                    </p>
+                    <div class="download-stats">
+                        <div class="stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">下载次数</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">用户评分</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">满意度</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持区域 -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="support-content">
+                <h2 class="support-title">需要帮助？</h2>
+                <p class="support-subtitle">我们随时为您提供支持</p>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="support-card-title">快速上手</h3>
+                        <p class="support-card-description">查看我们的使用指南，快速了解所有功能</p>
+                        <a href="#" class="support-link">查看指南 →</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15A2 2 0 0 1 19 17H7L3 21V5A2 2 0 0 1 5 3H19A2 2 0 0 1 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="support-card-title">技术支持</h3>
+                        <p class="support-card-description">遇到问题？我们的技术团队随时为您解答</p>
+                        <a href="#" class="support-link">联系支持 →</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 21V19A4 4 0 0 0 13 15H5A4 4 0 0 0 1 19V21" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M23 21V19A4 4 0 0 0 19.5 15.36" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 3.13A4 4 0 0 1 16 11A4 4 0 0 1 16 3.13Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="support-card-title">社区交流</h3>
+                        <p class="support-card-description">加入我们的用户社区，分享使用心得</p>
+                        <a href="#" class="support-link">加入社区 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="https://via.placeholder.com/24x24/007AFF/FFFFFF?text=CX" alt="CursorX" class="footer-logo-icon">
+                        <span class="footer-logo-text">CursorX</span>
+                    </div>
+                    <p class="footer-description">革命性的 macOS 光标体验</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">产品</h4>
+                        <a href="#features" class="footer-link">功能特性</a>
+                        <a href="#download" class="footer-link">下载</a>
+                        <a href="#" class="footer-link">更新日志</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">支持</h4>
+                        <a href="#" class="footer-link">使用指南</a>
+                        <a href="#" class="footer-link">技术支持</a>
+                        <a href="#" class="footer-link">常见问题</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">公司</h4>
+                        <a href="#" class="footer-link">关于我们</a>
+                        <a href="#" class="footer-link">隐私政策</a>
+                        <a href="#" class="footer-link">服务条款</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 CursorX. 保留所有权利。
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23 3A10.9 10.9 0 0 1 20.1 4.8A10.9 10.9 0 0 1 23 3Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M23 3V7A10.9 10.9 0 0 1 20.1 4.8A10.9 10.9 0 0 1 23 3Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19C4 20.5 4 16.5 2 16M22 16V19A2 2 0 0 1 20 21H4A2 2 0 0 1 2 19V16C2 14.5 2 13 4 13S6 14.5 6 16V19A2 2 0 0 0 8 21H16A2 2 0 0 0 18 19V16C18 14.5 18 13 20 13S22 14.5 22 16Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

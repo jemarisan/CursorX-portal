@@ -1,0 +1,29 @@
+{
+  "name": "cursorx-portal",
+  "version": "1.0.0",
+  "description": "CursorX 官方网站 - 革命性的 macOS 光标体验",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build step needed for static site'",
+    "deploy": "echo 'Deploy via GitHub Actions'"
+  },
+  "keywords": [
+    "cursorx",
+    "macos",
+    "cursor",
+    "productivity",
+    "website"
+  ],
+  "author": "CursorX Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/您的用户名/CursorX-portal.git"
+  },
+  "homepage": "https://cursorx.app",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
