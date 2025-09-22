@@ -123,6 +123,9 @@ function downloadMacOS() {
 
 // 显示下载模态框
 function showDownloadModal() {
+    // 记录当前滚动位置
+    const scrollY = window.scrollY;
+    
     const modal = document.createElement('div');
     modal.className = 'download-modal';
     modal.innerHTML = `
@@ -176,9 +179,10 @@ function showDownloadModal() {
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
         
-        .modal-overlay {
+        .download-modal .modal-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -186,6 +190,9 @@ function showDownloadModal() {
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .modal-content {
@@ -312,6 +319,8 @@ function showDownloadModal() {
         setTimeout(() => {
             document.body.removeChild(modal);
             document.head.removeChild(style);
+            // 恢复滚动位置
+            window.scrollTo(0, scrollY);
         }, 200);
     };
     
@@ -813,6 +822,9 @@ window.addEventListener('error', function(e) {
 
 // 微信联系功能
 function showWechatContact() {
+    // 记录当前滚动位置
+    const scrollY = window.scrollY;
+    
     const modal = document.createElement('div');
     modal.className = 'wechat-modal';
     modal.innerHTML = `
@@ -865,9 +877,10 @@ function showWechatContact() {
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px;
         }
         
-        .modal-overlay {
+        .wechat-modal .modal-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -875,6 +888,9 @@ function showWechatContact() {
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .modal-content {
@@ -1022,6 +1038,8 @@ function showWechatContact() {
         setTimeout(() => {
             document.body.removeChild(modal);
             document.head.removeChild(style);
+            // 恢复滚动位置
+            window.scrollTo(0, scrollY);
         }, 200);
     };
     

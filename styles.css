@@ -6,26 +6,26 @@
 }
 
 :root {
-    /* 苹果风格色彩系统 */
-    --primary-color: #007AFF;
-    --primary-hover: #0056CC;
-    --secondary-color: #5856D6;
-    --accent-color: #FF9500;
-    --success-color: #34C759;
-    --warning-color: #FF9500;
-    --error-color: #FF3B30;
+    /* 基于黑白 Logo 的色彩系统 */
+    --primary-color: #000000;        /* 黑色主色，与 logo 呼应 */
+    --primary-hover: #333333;        /* 深灰色悬停 */
+    --secondary-color: #4A4A4A;      /* 深灰色辅助色 */
+    --accent-color: #6B7280;         /* 温和的灰色强调色 */
+    --success-color: #10B981;        /* 绿色成功色 */
+    --warning-color: #F59E0B;        /* 橙色警告色 */
+    --error-color: #EF4444;          /* 红色错误色 */
     
-    /* 中性色 */
-    --text-primary: #1D1D1F;
-    --text-secondary: #6E6E73;
-    --text-tertiary: #8E8E93;
-    --background-primary: #FFFFFF;
-    --background-secondary: #F5F5F7;
-    --background-tertiary: #F2F2F7;
-    --border-color: #D1D1D6;
-    --shadow-light: rgba(0, 0, 0, 0.04);
-    --shadow-medium: rgba(0, 0, 0, 0.08);
-    --shadow-heavy: rgba(0, 0, 0, 0.12);
+    /* 中性色 - 黑白灰层次 */
+    --text-primary: #000000;         /* 纯黑色文字 */
+    --text-secondary: #4B5563;       /* 深灰色次要文字 */
+    --text-tertiary: #9CA3AF;        /* 中灰色辅助文字 */
+    --background-primary: #FFFFFF;   /* 纯白背景 */
+    --background-secondary: #F9FAFB; /* 极浅灰背景 */
+    --background-tertiary: #F3F4F6;  /* 浅灰背景 */
+    --border-color: #E5E7EB;         /* 浅灰边框 */
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --shadow-heavy: rgba(0, 0, 0, 0.15);
     
     /* 字体系统 */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -117,9 +117,12 @@ body {
 }
 
 .logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: var(--radius-sm);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--background-tertiary);
+    padding: 3px;
+    box-sizing: border-box;
 }
 
 .nav-links {
@@ -135,10 +138,6 @@ body {
     font-size: 0.95rem;
     transition: var(--transition-fast);
     position: relative;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
 }
 
 .nav-link::after {
@@ -239,13 +238,21 @@ body {
 .btn-primary {
     background: var(--primary-color);
     color: white;
-    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn.btn-primary img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.btn.btn-primary img svg {
+    stroke: white !important;
 }
 
 .btn-primary:hover {
     background: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 122, 255, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .btn-secondary {
@@ -406,12 +413,19 @@ body {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-lg);
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--background-tertiary);
+    border: 2px solid var(--border-color);
     border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text-primary);
+    transition: var(--transition-normal);
+}
+
+.feature-icon:hover {
+    background: var(--background-secondary);
+    border-color: var(--primary-color);
 }
 
 .feature-title {
@@ -453,6 +467,10 @@ body {
 
 .download-buttons {
     margin-bottom: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: center;
 }
 
 .download-btn {
@@ -468,6 +486,9 @@ body {
     font-size: 1.125rem;
     transition: var(--transition-normal);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
 }
 
 .download-btn:hover {
@@ -638,7 +659,10 @@ body {
 .footer-logo-icon {
     width: 24px;
     height: 24px;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    box-sizing: border-box;
 }
 
 .footer-logo-text {
@@ -763,6 +787,16 @@ body {
         width: 100%;
         max-width: 280px;
         justify-content: center;
+    }
+    
+    .download-buttons {
+        gap: var(--spacing-md);
+    }
+    
+    .download-btn {
+        max-width: 320px;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: 1rem;
     }
     
     .section-title {

@@ -1,0 +1,149 @@
+/* CursorX 品牌配色方案 */
+/* 基于 Logo 设计的色彩系统 */
+
+:root {
+    /* 主品牌色 - 基于 Logo 的主要颜色 */
+    --brand-primary: #007AFF;
+    --brand-primary-light: #4A9EFF;
+    --brand-primary-dark: #0056CC;
+    --brand-primary-alpha: rgba(0, 122, 255, 0.1);
+    
+    /* 辅助色 - 与主色搭配的温和色彩 */
+    --brand-secondary: #5856D6;
+    --brand-secondary-light: #7A79E0;
+    --brand-secondary-dark: #3D3CB8;
+    --brand-secondary-alpha: rgba(88, 86, 214, 0.1);
+    
+    /* 强调色 - 用于突出重要元素 */
+    --brand-accent: #FF9500;
+    --brand-accent-light: #FFB84D;
+    --brand-accent-dark: #E6850E;
+    --brand-accent-alpha: rgba(255, 149, 0, 0.1);
+    
+    /* 成功色 - 绿色系 */
+    --brand-success: #34C759;
+    --brand-success-light: #5DD279;
+    --brand-success-dark: #2BA345;
+    --brand-success-alpha: rgba(52, 199, 89, 0.1);
+    
+    /* 警告色 - 橙色系 */
+    --brand-warning: #FF9500;
+    --brand-warning-light: #FFB84D;
+    --brand-warning-dark: #E6850E;
+    --brand-warning-alpha: rgba(255, 149, 0, 0.1);
+    
+    /* 错误色 - 红色系 */
+    --brand-error: #FF3B30;
+    --brand-error-light: #FF6B63;
+    --brand-error-dark: #E6342A;
+    --brand-error-alpha: rgba(255, 59, 48, 0.1);
+    
+    /* 中性色 - 基于 Logo 的灰度系统 */
+    --brand-text-primary: #1D1D1F;
+    --brand-text-secondary: #6E6E73;
+    --brand-text-tertiary: #8E8E93;
+    --brand-text-disabled: #C7C7CC;
+    
+    /* 背景色 - 温暖的中性色调 */
+    --brand-bg-primary: #FFFFFF;
+    --brand-bg-secondary: #F5F5F7;
+    --brand-bg-tertiary: #F2F2F7;
+    --brand-bg-quaternary: #E5E5EA;
+    
+    /* 边框色 */
+    --brand-border-light: #E5E5EA;
+    --brand-border-medium: #D1D1D6;
+    --brand-border-dark: #C7C7CC;
+    
+    /* 阴影色 */
+    --brand-shadow-light: rgba(0, 0, 0, 0.04);
+    --brand-shadow-medium: rgba(0, 0, 0, 0.08);
+    --brand-shadow-heavy: rgba(0, 0, 0, 0.12);
+    --brand-shadow-brand: rgba(0, 122, 255, 0.15);
+    
+    /* 渐变色 */
+    --brand-gradient-primary: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    --brand-gradient-warm: linear-gradient(135deg, var(--brand-accent), var(--brand-primary));
+    --brand-gradient-cool: linear-gradient(135deg, var(--brand-primary), var(--brand-success));
+    
+    /* 毛玻璃效果 */
+    --brand-glass-light: rgba(255, 255, 255, 0.8);
+    --brand-glass-medium: rgba(255, 255, 255, 0.6);
+    --brand-glass-dark: rgba(255, 255, 255, 0.4);
+    
+    /* 液态玻璃效果 */
+    --brand-liquid-glass: rgba(255, 255, 255, 0.2);
+    --brand-liquid-glass-border: rgba(255, 255, 255, 0.3);
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --brand-text-primary: #FFFFFF;
+        --brand-text-secondary: #EBEBF5;
+        --brand-text-tertiary: #EBEBF599;
+        --brand-text-disabled: #EBEBF54D;
+        
+        --brand-bg-primary: #000000;
+        --brand-bg-secondary: #1C1C1E;
+        --brand-bg-tertiary: #2C2C2E;
+        --brand-bg-quaternary: #3A3A3C;
+        
+        --brand-border-light: #3A3A3C;
+        --brand-border-medium: #48484A;
+        --brand-border-dark: #636366;
+        
+        --brand-glass-light: rgba(0, 0, 0, 0.8);
+        --brand-glass-medium: rgba(0, 0, 0, 0.6);
+        --brand-glass-dark: rgba(0, 0, 0, 0.4);
+        
+        --brand-liquid-glass: rgba(0, 0, 0, 0.2);
+        --brand-liquid-glass-border: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* 品牌色彩应用类 */
+.brand-primary { color: var(--brand-primary); }
+.brand-secondary { color: var(--brand-secondary); }
+.brand-accent { color: var(--brand-accent); }
+
+.bg-brand-primary { background-color: var(--brand-primary); }
+.bg-brand-secondary { background-color: var(--brand-secondary); }
+.bg-brand-accent { background-color: var(--brand-accent); }
+
+.border-brand-primary { border-color: var(--brand-primary); }
+.border-brand-secondary { border-color: var(--brand-secondary); }
+.border-brand-accent { border-color: var(--brand-accent); }
+
+/* 渐变背景 */
+.bg-gradient-primary { background: var(--brand-gradient-primary); }
+.bg-gradient-warm { background: var(--brand-gradient-warm); }
+.bg-gradient-cool { background: var(--brand-gradient-cool); }
+
+/* 毛玻璃效果 */
+.glass-light { 
+    background: var(--brand-glass-light);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-medium { 
+    background: var(--brand-glass-medium);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.glass-dark { 
+    background: var(--brand-glass-dark);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 液态玻璃效果 */
+.liquid-glass {
+    background: var(--brand-liquid-glass);
+    border: 1px solid var(--brand-liquid-glass-border);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}

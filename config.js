@@ -16,7 +16,11 @@ const CONFIG = {
         name: 'CursorX',
         version: 'v1.0.0',
         description: '让你工作更舒服的温柔贴心光标小工具',
-        tagline: '像不存在一样完美的光标伴侣'
+        tagline: '像不存在一样完美的光标伴侣',
+        logo: {
+            jpg: 'static/logo.jpg',
+            svg: 'static/logo.svg'
+        }
     },
     
     // 开发者信息
