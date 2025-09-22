@@ -27,7 +27,7 @@ const CONFIG = {
     developer: {
         name: 'CursorX Team',
         email: '15019280942@163.com',
-        github: 'https://github.com/cursorx-team',
+        github: 'https://github.com/jemarisan/CursorX-portal',
         wechat: '添加微信反馈',
         twitter: 'https://twitter.com/cursorx_app'
     },
@@ -54,15 +54,15 @@ const CONFIG = {
     support: {
         guide: '#',
         contact: '15019280942@163.com',
-        community: 'https://github.com/cursorx-team',
+        community: 'https://github.com/jemarisan/CursorX-portal',
         wechat: '添加微信反馈',
-        githubIssues: 'https://github.com/cursorx-team/issues'
+        githubIssues: 'https://github.com/jemarisan/CursorX-portal/issues'
     },
     
     // 社交媒体
     social: {
         twitter: 'https://twitter.com/cursorx_app',
-        github: 'https://github.com/cursorx-team'
+        github: 'https://github.com/jemarisan/CursorX-portal'
     },
     
     // 网站信息
