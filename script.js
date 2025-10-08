@@ -106,15 +106,15 @@ function initDownloadButton() {
     }
 }
 
-// macOS 下载功能
+// macOS 下载功能（简化版）
 function downloadMacOS() {
     // 检测操作系统
     const userAgent = navigator.userAgent.toLowerCase();
     const isMac = userAgent.indexOf('mac') > -1;
     
     if (isMac) {
-        // 如果是 Mac，直接下载
-        showDownloadModal();
+        // 如果是 Mac，直接跳转到下载链接
+        window.location.href = 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg';
     } else {
         // 如果不是 Mac，显示提示
         showPlatformNotice();
@@ -354,28 +354,7 @@ function showDownloadModal() {
     document.head.appendChild(closeStyle);
 }
 
-// 开始下载
-function startDownload(arch) {
-    // 使用配置文件中的下载链接
-    const downloadUrls = window.CONFIG?.download?.downloadUrls || {
-        'universal': '#',
-        'apple-silicon': '#',
-        'intel': '#'
-    };
-    
-    // 模拟下载过程
-    showDownloadProgress(arch);
-    
-    // 实际下载
-    setTimeout(() => {
-        const link = document.createElement('a');
-        link.href = downloadUrls[arch] || '#';
-        link.download = `CursorX-${arch}.dmg`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }, 1000);
-}
+// 下载功能已简化 - 直接使用 HTML 中的下载链接
 
 // 显示下载进度（移除重复定义）
 
