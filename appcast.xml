@@ -34,7 +34,7 @@
                 ]]>
             </description>
             <pubDate>Mon, 08 Oct 2025 10:00:00 +0000</pubDate>
-            <enclosure url="https://cursorx.app/downloads/CursorX-1.0.0.dmg"
+            <enclosure url="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg"
                        sparkle:version="1.0.0"
                        sparkle:shortVersionString="1.0.0"
                        length="5059117"
@@ -70,7 +70,7 @@
                 ]]>
             </description>
             <pubDate>Mon, 15 Oct 2025 10:00:00 +0000</pubDate>
-            <enclosure url="https://cursorx.app/downloads/CursorX-1.1.0.dmg"
+            <enclosure url="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.1.0.dmg"
                        sparkle:version="1.1.0"
                        sparkle:shortVersionString="1.1.0"
                        length="12582912"
@@ -100,7 +100,7 @@
                 ]]>
             </description>
             <pubDate>Mon, 15 Oct 2025 10:00:00 +0000</pubDate>
-            <enclosure url="https://cursorx.app/downloads/CursorX-1.1.0.dmg"
+            <enclosure url="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.1.0.dmg"
                        sparkle:version="1.1.0"
                        sparkle:shortVersionString="1.1.0"
                        length="12582912"
