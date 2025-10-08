@@ -1,0 +1,12 @@
+# GitHub Pages 头部配置
+/downloads/*.dmg
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment
+
+/downloads/*.pkg
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment
+
+/downloads/*.zip
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment

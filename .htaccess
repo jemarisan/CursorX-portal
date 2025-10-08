@@ -1,0 +1,20 @@
+# 配置 MIME 类型
+AddType application/octet-stream .dmg
+AddType application/octet-stream .pkg
+AddType application/octet-stream .zip
+
+# 设置下载头
+<Files "*.dmg">
+    Header set Content-Type "application/octet-stream"
+    Header set Content-Disposition "attachment"
+</Files>
+
+<Files "*.pkg">
+    Header set Content-Type "application/octet-stream"
+    Header set Content-Disposition "attachment"
+</Files>
+
+<Files "*.zip">
+    Header set Content-Type "application/octet-stream"
+    Header set Content-Disposition "attachment"
+</Files>
