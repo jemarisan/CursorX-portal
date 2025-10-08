@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>CursorX 更新</title>
+        <description>CursorX 自动更新信息</description>
+        <language>zh-CN</language>
+        <link>https://cursorx.app</link>
+        
+        <!-- 当前版本 v1.0.0 -->
+        <item>
+            <title>CursorX v1.0.0</title>
+            <description>
+                <![CDATA[
+                <h2>🎉 CursorX 首次发布</h2>
+                <h3>核心功能</h3>
+                <ul>
+                    <li>✨ 智能光标跟踪 - 完美跟随您的输入节奏</li>
+                    <li>🎨 多种精美样式 - 系统、磨砂玻璃、液态玻璃</li>
+                    <li>🔄 全局支持 - 所有macOS应用完美兼容</li>
+                    <li>⚡ 高性能 - 轻量级，不影响系统性能</li>
+                </ul>
+                <h3>专业版功能</h3>
+                <ul>
+                    <li>🎯 输入法HUD显示</li>
+                    <li>🎨 高级光标样式</li>
+                    <li>⚙️ 高级配置选项</li>
+                    <li>🔄 自动启动</li>
+                </ul>
+                <h3>系统要求</h3>
+                <ul>
+                    <li>macOS 12.0 或更高版本</li>
+                    <li>支持 Apple Silicon 和 Intel 芯片</li>
+                </ul>
+                ]]>
+            </description>
+            <pubDate>Mon, 08 Oct 2025 10:00:00 +0000</pubDate>
+            <enclosure url="https://cursorx.app/downloads/CursorX-1.0.0.dmg"
+                       sparkle:version="1.0.0"
+                       sparkle:shortVersionString="1.0.0"
+                       length="5059117"
+                       type="application/octet-stream"
+                       sparkle:edSignature="[待生成签名]"/>
+        </item>
+        
+        <!-- 测试版本 v1.1.0 - 用于测试更新功能 -->
+        <item>
+            <title>CursorX v1.1.0</title>
+            <description>
+                <![CDATA[
+                <h2>🚀 性能优化版本</h2>
+                <h3>新功能</h3>
+                <ul>
+                    <li>🎯 优化光标检测算法，响应速度提升30%</li>
+                    <li>🎨 新增动态光标样式</li>
+                    <li>⚡ 内存使用优化，减少50%资源占用</li>
+                </ul>
+                <h3>修复</h3>
+                <ul>
+                    <li>🔧 修复某些应用中的显示问题</li>
+                    <li>🔧 优化多显示器支持</li>
+                    <li>🔧 改进权限处理流程</li>
+                </ul>
+                <h3>改进</h3>
+                <ul>
+                    <li>⚡ 提升整体性能表现</li>
+                    <li>🔋 优化电池使用</li>
+                    <li>🎨 改进用户界面</li>
+                    <li>🛡️ 增强稳定性</li>
+                </ul>
+                ]]>
+            </description>
+            <pubDate>Mon, 15 Oct 2025 10:00:00 +0000</pubDate>
+            <enclosure url="https://cursorx.app/downloads/CursorX-1.1.0.dmg"
+                       sparkle:version="1.1.0"
+                       sparkle:shortVersionString="1.1.0"
+                       length="12582912"
+                       type="application/octet-stream"
+                       sparkle:edSignature="[待生成签名]"/>
+        </item>
+        
+        <!-- 示例：未来版本 v1.1.0 -->
+        <!--
+        <item>
+            <title>CursorX v1.1.0</title>
+            <description>
+                <![CDATA[
+                <h2>🚀 性能优化版本</h2>
+                <h3>新功能</h3>
+                <ul>
+                    <li>🎯 优化光标检测算法，响应速度提升30%</li>
+                    <li>🎨 新增动态光标样式</li>
+                    <li>⚡ 内存使用优化，减少50%资源占用</li>
+                </ul>
+                <h3>修复</h3>
+                <ul>
+                    <li>🔧 修复某些应用中的显示问题</li>
+                    <li>🔧 优化多显示器支持</li>
+                    <li>🔧 改进权限处理流程</li>
+                </ul>
+                ]]>
+            </description>
+            <pubDate>Mon, 15 Oct 2025 10:00:00 +0000</pubDate>
+            <enclosure url="https://cursorx.app/downloads/CursorX-1.1.0.dmg"
+                       sparkle:version="1.1.0"
+                       sparkle:shortVersionString="1.1.0"
+                       length="12582912"
+                       type="application/octet-stream"
+                       sparkle:edSignature="[待生成签名]"/>
+        </item>
+        -->
+    </channel>
+</rss>
