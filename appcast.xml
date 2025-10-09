@@ -24,16 +24,17 @@
                     <li>🛡️ 增强系统稳定性</li>
                     <li>🔋 优化资源使用效率</li>
                     <li>🎨 改进用户体验细节</li>
+                    <li>✅ 通过 Apple 公证，可直接双击安装</li>
                 </ul>
                 ]]>
             </description>
-            <pubDate>Thu, 10 Oct 2025 13:00:00 +0000</pubDate>
+            <pubDate>Thu, 09 Oct 2025 15:30:41 +0000</pubDate>
             <enclosure url="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.1.3.dmg"
                        sparkle:version="1.1.3"
                        sparkle:shortVersionString="1.1.3"
-                       length="2306619"
+                       length="2348585"
                        type="application/octet-stream"
-                       sparkle:edSignature="BPBunxWZRaC5dMl11uAO4SBBlVmclNfeG311lHYrspMKs1MOthrX/lttlkOs18MI30BlNA9S7rbJf4alA5zZCA=="/>
+                       sparkle:edSignature="yDRVxtILm2Z7Bkv8dSHt5geBGO0mSfNRYxNdPIA8n6KJT8xbsz9McVMd57ToIeJ6h0SnFus8wgiCbySfqaweAQ=="/>
         </item>
         
         <!-- 历史版本 v1.1.2 - Bug修复版本 -->
