@@ -14,7 +14,20 @@
      */
     async function getLatestVersion() {
         try {
-            const response = await fetch(APPCAST_URL);
+            // 添加时间戳防止缓存
+            const timestamp = Date.now();
+            const urlWithCacheBust = `${APPCAST_URL}?t=${timestamp}&v=${Math.random()}`;
+            
+            const response = await fetch(urlWithCacheBust, {
+                method: 'GET',
+                cache: 'no-cache',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                }
+            });
+            
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -45,14 +58,42 @@
             // 将字节转换为 MB
             const sizeInMB = (length / (1024 * 1024)).toFixed(2);
             
-            return {
+            const versionInfo = {
                 version: version,
                 url: url,
                 size: sizeInMB,
-                sizeBytes: length
+                sizeBytes: length,
+                timestamp: timestamp
             };
+            
+            // 缓存版本信息（5分钟有效期）
+            const versionCacheKey = 'cursorx_version_cache';
+            const cacheData = {
+                data: versionInfo,
+                timestamp: timestamp,
+                expires: timestamp + (5 * 60 * 1000) // 5分钟后过期
+            };
+            localStorage.setItem(versionCacheKey, JSON.stringify(cacheData));
+            
+            return versionInfo;
         } catch (error) {
             console.error('获取版本信息失败:', error);
+            
+            // 尝试从缓存获取
+            const versionCacheKey = 'cursorx_version_cache';
+            const cached = localStorage.getItem(versionCacheKey);
+            if (cached) {
+                try {
+                    const cacheData = JSON.parse(cached);
+                    if (cacheData.expires > Date.now()) {
+                        console.log('📦 使用缓存的版本信息');
+                        return cacheData.data;
+                    }
+                } catch (e) {
+                    console.warn('缓存数据损坏');
+                }
+            }
+            
             return null;
         }
     }
@@ -63,6 +104,39 @@
     function getFileName(url) {
         const parts = url.split('/');
         return parts[parts.length - 1];
+    }
+    
+    /**
+     * 为 URL 添加缓存破坏参数
+     */
+    function addCacheBustToUrl(url) {
+        if (!url) return url;
+        
+        const separator = url.includes('?') ? '&' : '?';
+        const timestamp = Date.now();
+        const random = Math.random().toString(36).substring(7);
+        
+        return `${url}${separator}cb=${timestamp}&r=${random}`;
+    }
+    
+    /**
+     * 强制刷新页面缓存
+     */
+    function forceRefreshCache() {
+        // 清除所有可能的缓存
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                names.forEach(function(name) {
+                    caches.delete(name);
+                });
+            });
+        }
+        
+        // 清除 localStorage 中的版本缓存
+        const versionCacheKey = 'cursorx_version_cache';
+        localStorage.removeItem(versionCacheKey);
+        
+        console.log('🔄 已清除所有缓存');
     }
     
     /**
@@ -82,7 +156,9 @@
         // 更新主下载按钮
         const downloadBtn = document.querySelector('.download-btn.macos');
         if (downloadBtn) {
-            downloadBtn.href = url;
+            // 添加缓存破坏参数到下载链接
+            const cacheBustUrl = addCacheBustToUrl(url);
+            downloadBtn.href = cacheBustUrl;
             downloadBtn.setAttribute('download', fileName);
             
             // 更新版本号显示
@@ -101,7 +177,8 @@
         if (heroDownloadBtn && !heroDownloadBtn.classList.contains('updated')) {
             // 如果 Hero 按钮是直接下载链接，也更新它
             if (heroDownloadBtn.href && heroDownloadBtn.href.includes('.dmg')) {
-                heroDownloadBtn.href = url;
+                const cacheBustUrl = addCacheBustToUrl(url);
+                heroDownloadBtn.href = cacheBustUrl;
                 heroDownloadBtn.setAttribute('download', fileName);
                 heroDownloadBtn.classList.add('updated');
                 console.log('✅ 已更新 Hero 下载按钮');
@@ -145,12 +222,33 @@
     // 导出到全局，方便调试
     window.CursorXVersion = {
         refresh: async function() {
+            forceRefreshCache();
             const versionInfo = await getLatestVersion();
             updateVersionInfo(versionInfo);
             return versionInfo;
         },
-        getInfo: getLatestVersion
+        getInfo: getLatestVersion,
+        clearCache: forceRefreshCache,
+        addCacheBust: addCacheBustToUrl
     };
+    
+    // 添加键盘快捷键 Ctrl+F5 强制刷新
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'F5') {
+            e.preventDefault();
+            console.log('🔄 用户强制刷新版本信息');
+            window.CursorXVersion.refresh();
+        }
+    });
+    
+    // 定期检查版本更新（每5分钟）
+    setInterval(async function() {
+        console.log('🔄 定期检查版本更新...');
+        const versionInfo = await getLatestVersion();
+        if (versionInfo) {
+            updateVersionInfo(versionInfo);
+        }
+    }, 5 * 60 * 1000); // 5分钟
     
 })();
 
