@@ -7,7 +7,7 @@
     'use strict';
     
     // 配置
-    const APPCAST_URL = './appcast.xml';
+    const APPCAST_URL = 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/appcast.xml';
     
     /**
      * 从 appcast.xml 获取最新版本信息
