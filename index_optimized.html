@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CursorX - macOS自定义文本光标增强工具。精准跟踪光标位置，16种输入法颜色识别，智能HUD提示。支持macOS 12.0+，核心功能免费。">
+    <meta name="keywords" content="CursorX,macOS,光标工具,文本插入点,输入法识别,HUD提示,Accessibility,生产力工具,免费软件,开源">
+    <meta name="author" content="CursorX Team">
+    
+    <!-- SEO 优化 -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CursorX - macOS文本光标增强工具 | 输入法颜色识别 + 智能HUD">
+    <meta property="og:description" content="精准光标跟踪，16种输入法颜色自动识别，智能HUD提示。核心功能免费的macOS生产力工具。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cursorx.app">
+    <meta property="og:image" content="https://cursorx.app/og-image.png">
+    <meta property="og:site_name" content="CursorX">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CursorX - macOS文本光标增强工具">
+    <meta name="twitter:description" content="精准光标跟踪，16种输入法颜色自动识别，智能HUD提示。">
+    <meta name="twitter:image" content="https://cursorx.app/og-image.png">
+    
+    <title>CursorX - macOS 文本光标增强工具 | 输入法颜色识别 + 智能HUD</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="xpoint-demos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- 配置文件 -->
+    <script src="config.js"></script>
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CursorX",
+      "description": "CursorX - macOS自定义文本光标增强工具，支持16种输入法颜色识别和智能HUD提示。",
+      "operatingSystem": "macOS",
+      "applicationCategory": "ProductivityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2025-12-31"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "CursorX Team"
+      },
+      "url": "https://cursorx.app",
+      "downloadUrl": "https://cursorx.app/#download"
+    }
+    </script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="static/logo.svg" alt="CursorX" class="logo-icon">
+                <span class="logo-text">CursorX</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">功能</a>
+                <a href="#demos" class="nav-link">演示</a>
+                <a href="#download" class="nav-link">下载</a>
+                <a href="#support" class="nav-link">支持</a>
+            </div>
+            <div class="nav-menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    macOS 自定义文本光标增强工具
+                </h1>
+                <p class="hero-subtitle">
+                    精准跟踪文本插入点 • 16种输入法颜色识别 • 智能HUD提示
+                    <br>
+                    让每一次输入都清晰可见，提升 macOS 文本编辑体验
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <img src="static/icons/download-white.svg" alt="下载" width="20" height="20">
+                        免费下载
+                    </a>
+                    <a href="https://github.com/jemarisan/CursorX-portal" class="btn btn-secondary" target="_blank">
+                        <img src="static/icons/github.svg" alt="GitHub" width="20" height="20">
+                        GitHub
+                    </a>
+                </div>
+                <div class="hero-badge">
+                    <span class="badge">macOS 12.0+</span>
+                    <span class="badge">Apple Silicon</span>
+                    <span class="badge">核心功能免费</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- XPoint 光标演示 + HUD -->
+                <div class="xpoint-demo-container fade-in-up">
+                    <div class="mock-editor">
+                        <div class="mock-editor-header">
+                            <div class="mock-traffic-lights">
+                                <span class="light red"></span>
+                                <span class="light yellow"></span>
+                                <span class="light green"></span>
+                            </div>
+                            <span class="mock-title">TextEdit.app</span>
+                        </div>
+                        <div class="mock-editor-content">
+                            <div class="mock-text-line">
+                                <span class="mock-text">欢迎使用 CursorX</span>
+                                <span class="xpoint-cursor animated"></span>
+                            </div>
+                            <br><br>
+                            <div class="mock-text-line">
+                                <span class="mock-text">英文输入：</span>
+                                <span class="mock-text">Hello World</span>
+                                <span class="xpoint-cursor"></span>
+                            </div>
+                            <br>
+                            <div class="mock-text-line">
+                                <span class="mock-text">中文输入：</span>
+                                <span class="mock-text">你好世界</span>
+                                <span class="xpoint-cursor red"></span>
+                            </div>
+                            <br>
+                            <div class="mock-text-line">
+                                <span class="mock-text">大写锁定：</span>
+                                <span class="mock-text">CAPS LOCK</span>
+                                <span class="xpoint-cursor capslock-glow"></span>
+                            </div>
+                            
+                            <!-- HUD 提示气泡 -->
+                            <div class="hero-hud-bubble">
+                                <div class="hud-icon">🇨🇳</div>
+                                <div class="hud-text">
+                                    <div class="hud-title">简体拼音</div>
+                                    <div class="hud-subtitle">输入法已切换</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性区域 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">强大而精准的功能特性</h2>
+                <p class="section-subtitle">基于 macOS Accessibility API，为文本编辑提供全方位增强</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <img src="static/icons/mouse-pointer.svg" alt="精准光标跟踪" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">精准跟踪文本插入点</h3>
+                    <p class="feature-description">基于 macOS Accessibility API，在文本编辑器、浏览器、IDE 等所有应用中精准定位光标位置，提供可视化增强</p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <img src="static/icons/layers.svg" alt="输入法颜色识别" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">16种输入法颜色识别</h3>
+                    <p class="feature-description">为不同输入法自动分配16种高辨识度颜色，中英文切换一眼就能看出，无需开启HUD就能快速识别当前输入法</p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <img src="static/icons/smile.svg" alt="智能HUD提示" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">智能抬头显示（HUD）</h3>
+                    <p class="feature-description">输入法切换时自动显示HUD气泡，展示输入法图标和名称，可配置显示位置、时长和内容，不干扰正常操作</p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <img src="static/icons/settings.svg" alt="丰富的自定义选项" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">丰富的自定义选项</h3>
+                    <p class="feature-description">光标形状、大小、颜色、边框、位置等全方位可配置，HUD显示内容和时长自定义，打造专属你的输入体验</p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <img src="static/icons/zap.svg" alt="超低性能消耗" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">事件驱动，几乎零消耗</h3>
+                    <p class="feature-description">采用事件驱动设计，仅在光标移动时响应，平均CPU占用<1%，内存占用<20MB，不影响系统性能和续航</p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <img src="static/icons/check.svg" alt="Caps Lock指示" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">Caps Lock 绿色光晕</h3>
+                    <p class="feature-description">按下 Caps Lock 时光标显示 macOS 系统绿色光晕效果，与系统行为保持一致，大小写状态一目了然</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能演示区域 -->
+    <section id="demos" class="demos" style="background: var(--background-secondary); padding: 80px 0;">
+        <div class="container">
+            <!-- 16色预设展示 -->
+            <div class="section-header">
+                <h2 class="section-title">16种输入法颜色预设</h2>
+                <p class="section-subtitle">高辨识度配色方案，让不同输入法一目了然</p>
+            </div>
+            
+            <div class="color-preset-grid fade-in-up">
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-0"></div>
+                    <div class="color-preset-name">经典蓝</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-1"></div>
+                    <div class="color-preset-name">活力红</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-2"></div>
+                    <div class="color-preset-name">自然绿</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-3"></div>
+                    <div class="color-preset-name">明亮黄</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-4"></div>
+                    <div class="color-preset-name">优雅紫</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-5"></div>
+                    <div class="color-preset-name">活力橙</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-6"></div>
+                    <div class="color-preset-name">清新青</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-7"></div>
+                    <div class="color-preset-name">甜美粉</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-8"></div>
+                    <div class="color-preset-name">深邃蓝</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-9"></div>
+                    <div class="color-preset-name">深沉红</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-10"></div>
+                    <div class="color-preset-name">森林绿</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-11"></div>
+                    <div class="color-preset-name">奢华金</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-12"></div>
+                    <div class="color-preset-name">神秘靛</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-13"></div>
+                    <div class="color-preset-name">大地棕</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-14"></div>
+                    <div class="color-preset-name">中性灰</div>
+                </div>
+                <div class="color-preset-item">
+                    <div class="color-preset-circle color-15"></div>
+                    <div class="color-preset-name">纯净白</div>
+                </div>
+            </div>
+
+            <!-- 输入法场景演示 -->
+            <div style="margin-top: 60px;">
+                <div class="section-header">
+                    <h2 class="section-title">输入法智能识别</h2>
+                    <p class="section-subtitle">不同输入法自动显示不同颜色，切换状态一目了然</p>
+                </div>
+                
+                <div class="input-method-demo fade-in-up">
+                    <div class="input-method-card">
+                        <div class="input-method-name">
+                            <span class="input-method-icon">🇺🇸</span>
+                            ABC - 美国
+                        </div>
+                        <div class="input-method-sample">
+                            <span class="mock-text">Hello World</span>
+                            <span class="xpoint-cursor"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-method-card">
+                        <div class="input-method-name">
+                            <span class="input-method-icon">🇨🇳</span>
+                            简体拼音
+                        </div>
+                        <div class="input-method-sample">
+                            <span class="mock-text">你好世界</span>
+                            <span class="xpoint-cursor red"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-method-card">
+                        <div class="input-method-name">
+                            <span class="input-method-icon">🔒</span>
+                            Caps Lock 开启
+                        </div>
+                        <div class="input-method-sample">
+                            <span class="mock-text">CAPS LOCK ON</span>
+                            <span class="xpoint-cursor capslock-glow"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 使用场景 -->
+    <section class="use-cases" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">适用于各种文本编辑场景</h2>
+                <p class="section-subtitle">无论你在哪里输入，CursorX 都能提供帮助</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-visual-card fade-in-up">
+                    <div class="feature-visual-demo" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span style="font-size: 48px; color: white;">📝</span>
+                    </div>
+                    <h3 class="ui-style-name">文本编辑器</h3>
+                    <p class="ui-style-description">在 Pages、TextEdit、备忘录中编写文档时，清晰的光标让长时间写作更轻松</p>
+                </div>
+                
+                <div class="feature-visual-card fade-in-up">
+                    <div class="feature-visual-demo" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span style="font-size: 48px; color: white;">💻</span>
+                    </div>
+                    <h3 class="ui-style-name">代码编辑</h3>
+                    <p class="ui-style-description">在 Xcode、VS Code 中编程时，彩色光标帮助识别输入法状态，避免中英文输入错误</p>
+                </div>
+                
+                <div class="feature-visual-card fade-in-up">
+                    <div class="feature-visual-demo" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <span style="font-size: 48px; color: white;">🌐</span>
+                    </div>
+                    <h3 class="ui-style-name">浏览器输入</h3>
+                    <p class="ui-style-description">在 Chrome、Safari 的网页表单中输入时，HUD 提示让你始终知道当前输入法</p>
+                </div>
+                
+                <div class="feature-visual-card fade-in-up">
+                    <div class="feature-visual-demo" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <span style="font-size: 48px; color: white;">📧</span>
+                    </div>
+                    <h3 class="ui-style-name">邮件撰写</h3>
+                    <p class="ui-style-description">在 Mail、Outlook 中撰写邮件时，颜色区分让多语言切换更自然</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 性能优势 -->
+    <section style="background: var(--background-secondary); padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">极致性能优化</h2>
+                <p class="section-subtitle">事件驱动架构，几乎零资源消耗</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="feature-visual-card fade-in-up">
+                    <div class="feature-visual-demo">
+                        <div class="performance-chart">
+                            <div class="performance-bar"></div>
+                            <div class="performance-bar"></div>
+                            <div class="performance-bar"></div>
+                            <div class="performance-bar"></div>
+                            <div class="performance-bar"></div>
+                            <div class="performance-bar"></div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 24px;">
+                        <h3 class="ui-style-name" style="font-size: 24px; margin-bottom: 16px;">
+                            平均 CPU 占用 < 1%
+                        </h3>
+                        <p class="ui-style-description" style="font-size: 16px;">
+                            采用事件驱动设计，仅在光标移动时响应<br>
+                            内存占用 < 20MB • 不影响系统性能和续航
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title">立即下载 CursorX</h2>
+                <p class="download-subtitle">免费下载 • 核心功能永久免费 • 支持自动更新</p>
+                
+                <div class="download-buttons">
+                    <a href="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg" class="download-btn macos" download="CursorX-1.0.0.dmg">
+                        <div class="download-btn-icon">
+                            <img src="static/icons/download.svg" alt="macOS下载" width="24" height="24">
+                        </div>
+                        <div class="download-btn-content">
+                            <div class="download-btn-text">Download for macOS</div>
+                            <div class="download-btn-version">v1.0.0 • 4.82 MB</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/jemarisan/CursorX-portal" class="download-btn github" target="_blank">
+                        <div class="download-btn-icon">
+                            <img src="static/icons/github.svg" alt="GitHub" width="24" height="24">
+                        </div>
+                        <div class="download-btn-content">
+                            <div class="download-btn-text">View on GitHub</div>
+                            <div class="download-btn-version">开源项目 • 参与贡献</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="download-info">
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">系统要求</h3>
+                        <p class="system-requirements">
+                            macOS 12.0 或更高版本 • 支持 Apple Silicon 和 Intel 芯片
+                        </p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">功能亮点</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; max-width: 600px; margin: 0 auto;">
+                            <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                                <span style="color: var(--success-color);">✓</span>
+                                <span>免费下载，快速安装</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                                <span style="color: var(--success-color);">✓</span>
+                                <span>核心功能永久免费</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                                <span style="color: var(--success-color);">✓</span>
+                                <span>内置自动更新</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                                <span style="color: var(--success-color);">✓</span>
+                                <span>原生 Swift 开发</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持区域 -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="support-content">
+                <h2 class="support-title">需要帮助？</h2>
+                <p class="support-subtitle">我们提供多种反馈渠道，快速响应你的问题</p>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="static/icons/message-circle.svg" alt="微信反馈" width="32" height="32">
+                        </div>
+                        <h3 class="support-card-title">微信反馈</h3>
+                        <p class="support-card-description">添加微信，随时沟通，快速响应你的问题</p>
+                        <a href="#" class="support-link" onclick="showWechatContact()">添加微信 →</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="static/icons/github.svg" alt="GitHub Issues" width="32" height="32">
+                        </div>
+                        <h3 class="support-card-title">GitHub Issues</h3>
+                        <p class="support-card-description">在 GitHub 上提交问题，与其他用户一起讨论</p>
+                        <a href="https://github.com/jemarisan/CursorX-portal/issues" class="support-link" target="_blank">提交 Issue →</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="static/icons/mail.svg" alt="开发者邮箱" width="32" height="32">
+                        </div>
+                        <h3 class="support-card-title">开发者邮箱</h3>
+                        <p class="support-card-description">直接发送邮件给开发者，获得专业的解答</p>
+                        <a href="mailto:15019280942@163.com" class="support-link">发送邮件 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="static/logo.svg" alt="CursorX" class="footer-logo-icon">
+                        <span class="footer-logo-text">CursorX</span>
+                    </div>
+                    <p class="footer-description">macOS 文本光标增强工具<br>让每一次输入都清晰可见</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">产品</h4>
+                        <a href="#features" class="footer-link">功能特性</a>
+                        <a href="#demos" class="footer-link">功能演示</a>
+                        <a href="#download" class="footer-link">下载</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal" class="footer-link" target="_blank">GitHub</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">反馈渠道</h4>
+                        <a href="mailto:15019280942@163.com" class="footer-link">开发者邮箱</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal/issues" class="footer-link" target="_blank">GitHub Issues</a>
+                        <a href="#" class="footer-link" onclick="showWechatContact()">微信反馈</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">开源</h4>
+                        <a href="https://github.com/jemarisan/CursorX-portal" class="footer-link" target="_blank">项目主页</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal/issues" class="footer-link" target="_blank">提交问题</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal/pulls" class="footer-link" target="_blank">参与贡献</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 CursorX. 保留所有权利。
+                </p>
+                <div class="footer-social">
+                    <a href="mailto:15019280942@163.com" class="social-link" aria-label="开发者邮箱">
+                        <img src="static/icons/mail.svg" alt="邮箱" width="20" height="20">
+                    </a>
+                    <a href="https://github.com/jemarisan/CursorX-portal" class="social-link" aria-label="GitHub" target="_blank">
+                        <img src="static/icons/github.svg" alt="GitHub" width="20" height="20">
+                    </a>
+                    <a href="#" class="social-link" aria-label="微信反馈" onclick="showWechatContact()">
+                        <img src="static/icons/message-circle.svg" alt="微信" width="20" height="20">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
