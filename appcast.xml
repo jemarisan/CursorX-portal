@@ -6,6 +6,84 @@
         <language>zh-CN</language>
         <link>https://cursorx.app</link>
         
+        <!-- 最新版本 v1.2.3 - 新功能版本 -->
+        <item>
+            <title>CursorX v1.2.3</title>
+            <description>
+                <![CDATA[
+                <h2>✨ 新功能版本</h2>
+                <h3>新功能</h3>
+                <ul>
+                    <li>🎯 输入法样式功能 - 为不同输入法设置专属颜色</li>
+                    <li>🎨 16种精美预设颜色方案</li>
+                    <li>🔍 智能样式选择器，可视化预览效果</li>
+                    <li>🌙 HUD Dark模式支持</li>
+                    <li>🧠 智能图标适配算法，确保图标清晰可见</li>
+                </ul>
+                <h3>修复</h3>
+                <ul>
+                    <li>🐛 修复Caps Lock绿色光晕被裁剪问题</li>
+                    <li>🐛 修复xpoint位置跳跃问题</li>
+                    <li>🐛 修复边框宽度设置无效问题</li>
+                    <li>🐛 修复样式选择器空白问题</li>
+                    <li>🐛 优化HUD图标在Dark模式下的可见性</li>
+                </ul>
+                <h3>优化</h3>
+                <ul>
+                    <li>⚡ 优化图标渲染性能</li>
+                    <li>⚡ 智能缓存机制减少重复计算</li>
+                    <li>⚡ 优化HUD显示逻辑</li>
+                    <li>✅ 通过 Apple 公证，可直接双击安装</li>
+                </ul>
+                ]]>
+            </description>
+            <pubDate>Sat, 11 Oct 2025 13:46:55 +0000</pubDate>
+            <enclosure url="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.3.dmg"
+                       sparkle:version="1.2.3"
+                       sparkle:shortVersionString="1.2.3"
+                       length="2464140"
+                       type="application/octet-stream"
+                       sparkle:edSignature="Ajxlui9LThxRerkum2QB5ySBy9sxB0iljAC0ywRzkgzTbef9BWVNREG/FZE/81ISwc/7seE4gNMuYKkxsQtfAA=="/>
+        </item>
+        <!-- 最新版本 v1.2.3 - 新功能版本 -->
+        <item>
+            <title>CursorX v1.2.3</title>
+            <description>
+                <![CDATA[
+                <h2>✨ 新功能版本</h2>
+                <h3>新功能</h3>
+                <ul>
+                    <li>🎯 输入法样式功能 - 为不同输入法设置专属颜色</li>
+                    <li>🎨 16种精美预设颜色方案</li>
+                    <li>🔍 智能样式选择器，可视化预览效果</li>
+                    <li>🌙 HUD Dark模式支持</li>
+                    <li>🧠 智能图标适配算法，确保图标清晰可见</li>
+                </ul>
+                <h3>修复</h3>
+                <ul>
+                    <li>🐛 修复Caps Lock绿色光晕被裁剪问题</li>
+                    <li>🐛 修复xpoint位置跳跃问题</li>
+                    <li>🐛 修复边框宽度设置无效问题</li>
+                    <li>🐛 修复样式选择器空白问题</li>
+                    <li>🐛 优化HUD图标在Dark模式下的可见性</li>
+                </ul>
+                <h3>优化</h3>
+                <ul>
+                    <li>⚡ 优化图标渲染性能</li>
+                    <li>⚡ 智能缓存机制减少重复计算</li>
+                    <li>⚡ 优化HUD显示逻辑</li>
+                    <li>✅ 通过 Apple 公证，可直接双击安装</li>
+                </ul>
+                ]]>
+            </description>
+            <pubDate>Sat, 11 Oct 2025 13:07:06 +0000</pubDate>
+            <enclosure url="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.3.dmg"
+                       sparkle:version="1.2.3"
+                       sparkle:shortVersionString="1.2.3"
+                       length="2473539"
+                       type="application/octet-stream"
+                       sparkle:edSignature="ISq4WXzQIVXCmHkIuVNpANSw2iyUjALmmVBaTr4+6WvVz8kZ82xoAI3E1QZpd70LvhOuef0zcfKazTl/n1llDw=="/>
+        </item>
         <!-- 最新版本 v1.2.2 - 新功能版本 -->
         <item>
             <title>CursorX v1.2.2</title>
