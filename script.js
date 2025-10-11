@@ -114,7 +114,7 @@ function downloadMacOS() {
     
     if (isMac) {
         // 如果是 Mac，直接跳转到下载链接
-        window.location.href = 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg';
+        window.location.href = 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.0.dmg';
     } else {
         // 如果不是 Mac，显示提示
         showPlatformNotice();
