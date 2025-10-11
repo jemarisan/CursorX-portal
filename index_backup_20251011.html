@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CursorX 是一个温柔的 macOS 光标小工具，默默跟随你的输入节奏，在需要时提供贴心提示，让工作更轻松。">
+    <meta name="keywords" content="CursorX,macOS,光标,文本插入点,输入法,HUD,苹果,温柔,贴心,办公工具">
+    <meta name="author" content="CursorX Team">
+    
+    <!-- SEO 优化 -->
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CursorX - 让你工作更舒服的温柔贴心光标小工具">
+    <meta property="og:description" content="CursorX 是一个温柔的 macOS 光标小工具，默默跟随你的输入节奏，在需要时提供贴心提示，让工作更轻松。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cursorx.app">
+    <meta property="og:image" content="https://cursorx.app/og-image.png">
+    <meta property="og:site_name" content="CursorX">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CursorX - 让你工作更舒服的温柔贴心光标小工具">
+    <meta name="twitter:description" content="CursorX 是一个温柔的 macOS 光标小工具，默默跟随你的输入节奏，在需要时提供贴心提示，让工作更轻松。">
+    <meta name="twitter:image" content="https://cursorx.app/og-image.png">
+    
+    <title>CursorX - 让你工作更舒服的温柔贴心光标小工具</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- 配置文件 -->
+    <script src="config.js"></script>
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "CursorX",
+      "description": "CursorX 是一个温柔的 macOS 光标小工具，默默跟随你的输入节奏，在需要时提供贴心提示，让工作更轻松。",
+      "operatingSystem": "macOS",
+      "applicationCategory": "ProductivityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "CursorX Team"
+      },
+      "url": "https://cursorx.app",
+      "downloadUrl": "https://cursorx.app/#download"
+    }
+    </script>
+</head>
+<body>
+    <!-- 面包屑导航 -->
+    <nav aria-label="面包屑导航" style="display: none;">
+        <ol>
+            <li><a href="/">首页</a></li>
+            <li>CursorX</li>
+        </ol>
+    </nav>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="static/logo.svg" alt="CursorX" class="logo-icon">
+                <span class="logo-text">CursorX</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">功能</a>
+                <a href="#download" class="nav-link">下载</a>
+                <a href="#support" class="nav-link">支持</a>
+            </div>
+            <div class="nav-menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    让你工作更舒服的 <span class="highlight">温柔贴心光标</span> 小工具
+                </h1>
+                <p class="hero-subtitle">
+                    默默跟随你的输入节奏，在需要时提供贴心提示，
+                    <br>不打扰你的专注，只在需要时轻轻出现
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <img src="static/icons/download-white.svg" alt="下载" width="20" height="20">
+                        免费下载
+                    </a>
+                    <a href="https://github.com/jemarisan/CursorX-portal" class="btn btn-secondary" target="_blank">
+                        <img src="static/icons/github.svg" alt="GitHub" width="20" height="20">
+                        GitHub
+                    </a>
+                </div>
+                <div class="hero-badge">
+                    <span class="badge">macOS 12.0+</span>
+                    <span class="badge">Apple Silicon</span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="cursor-demo">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop&crop=center" alt="CursorX 演示 - 温柔的输入体验" class="demo-image">
+                    <div class="cursor-overlay">
+                        <div class="custom-cursor"></div>
+                        <div class="hud-bubble">
+                            <div class="hud-content">
+                                <span class="hud-item">🇺🇸</span>
+                                <span class="hud-item">14:32</span>
+                                <span class="hud-item">🔋85%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特性区域 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">像不存在一样完美</h2>
+                <p class="section-subtitle">默默陪伴，温柔呵护你的每一次输入</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/icons/mouse-pointer.svg" alt="像素级温柔跟随" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">像素级温柔跟随</h3>
+                    <p class="feature-description">无论快速滑动还是逐字移动，都能温柔跟随你的输入节奏，让你感觉不到它的存在</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/icons/layers.svg" alt="三种风格，随心切换" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">三种风格，随心切换</h3>
+                    <p class="feature-description">系统默认、毛玻璃、液态玻璃，多种风格随心切换，适配你的不同审美需求</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/icons/smile.svg" alt="恰到好处的信息" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">恰到好处的信息</h3>
+                    <p class="feature-description">智能抬头显示（HUD），只在需要时轻轻出现，提供输入法、时间、电量等贴心提示</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/icons/settings.svg" alt="和谐舒服的样式" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">和谐舒服的样式</h3>
+                    <p class="feature-description">精心调校的视觉风格，包括毛玻璃和液态玻璃，看着舒服很重要</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/icons/zap.svg" alt="超低资源消耗" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">超低资源消耗</h3>
+                    <p class="feature-description">平均资源占用不超1%，采用事件驱动设计，不变化位置时不占用资源，让你身心舒畅</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="static/icons/check.svg" alt="隐形替代技术" width="48" height="48">
+                    </div>
+                    <h3 class="feature-title">隐形替代技术</h3>
+                    <p class="feature-description">不改变你习惯的光标行为，只是悄悄增加了更多可能性，让你放心使用</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <h2 class="download-title">开始你的温柔光标之旅</h2>
+                <p class="download-subtitle">免费下载，让工作变得更舒服</p>
+                
+                <div class="download-buttons">
+                    <a href="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg" class="download-btn macos" download="CursorX-1.0.0.dmg">
+                        <div class="download-btn-icon">
+                            <img src="static/icons/download.svg" alt="macOS下载" width="24" height="24">
+                        </div>
+                        <div class="download-btn-content">
+                            <div class="download-btn-text">Download for macOS</div>
+                            <div class="download-btn-version">v1.0.0 • 4.82 MB</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/jemarisan/CursorX-portal" class="download-btn github" target="_blank">
+                        <div class="download-btn-icon">
+                            <img src="static/icons/github.svg" alt="GitHub" width="24" height="24">
+                        </div>
+                        <div class="download-btn-content">
+                            <div class="download-btn-text">View on GitHub</div>
+                            <div class="download-btn-version">开源项目 • 参与贡献</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="download-info">
+                    <p class="system-requirements">
+                        系统要求：macOS 12.0 或更高版本 • 支持 Apple Silicon 和 Intel 芯片
+                    </p>
+                    <div class="download-stats">
+                        <div class="stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">下载次数</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">用户评分</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99%</span>
+                            <span class="stat-label">满意度</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 支持区域 -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="support-content">
+                <h2 class="support-title">温柔陪伴，贴心支持</h2>
+                <p class="support-subtitle">遇到问题？我们提供三种温暖的反馈渠道</p>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="static/icons/message-circle.svg" alt="微信反馈" width="32" height="32">
+                        </div>
+                        <h3 class="support-card-title">微信反馈</h3>
+                        <p class="support-card-description">添加微信，随时沟通，快速响应你的问题</p>
+                        <a href="#" class="support-link" onclick="showWechatContact()">添加微信 →</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="static/icons/github.svg" alt="GitHub Issues" width="32" height="32">
+                        </div>
+                        <h3 class="support-card-title">GitHub Issues</h3>
+                        <p class="support-card-description">在 GitHub 上提交问题，与其他用户一起讨论</p>
+                        <a href="https://github.com/jemarisan/CursorX-portal/issues" class="support-link" target="_blank">提交 Issue →</a>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="static/icons/mail.svg" alt="开发者邮箱" width="32" height="32">
+                        </div>
+                        <h3 class="support-card-title">开发者邮箱</h3>
+                        <p class="support-card-description">直接发送邮件给开发者，获得最专业的解答</p>
+                        <a href="mailto:15019280942@163.com" class="support-link">发送邮件 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="static/logo.svg" alt="CursorX" class="footer-logo-icon">
+                        <span class="footer-logo-text">CursorX</span>
+                    </div>
+                    <p class="footer-description">让你工作更舒服的温柔贴心光标小工具</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">产品</h4>
+                        <a href="#features" class="footer-link">贴心功能</a>
+                        <a href="#download" class="footer-link">下载</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal" class="footer-link" target="_blank">GitHub</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">反馈渠道</h4>
+                        <a href="mailto:15019280942@163.com" class="footer-link">开发者邮箱</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal/issues" class="footer-link" target="_blank">GitHub Issues</a>
+                        <a href="#" class="footer-link" onclick="showWechatContact()">微信反馈</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">开源</h4>
+                        <a href="https://github.com/jemarisan/CursorX-portal" class="footer-link" target="_blank">项目主页</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal/issues" class="footer-link" target="_blank">提交问题</a>
+                        <a href="https://github.com/jemarisan/CursorX-portal/pulls" class="footer-link" target="_blank">参与贡献</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 CursorX. 保留所有权利。
+                </p>
+                <div class="footer-social">
+                    <a href="mailto:15019280942@163.com" class="social-link" aria-label="开发者邮箱">
+                        <img src="static/icons/mail.svg" alt="邮箱" width="20" height="20">
+                    </a>
+                    <a href="https://github.com/jemarisan/CursorX-portal" class="social-link" aria-label="GitHub" target="_blank">
+                        <img src="static/icons/github.svg" alt="GitHub" width="20" height="20">
+                    </a>
+                    <a href="#" class="social-link" aria-label="微信反馈" onclick="showWechatContact()">
+                        <img src="static/icons/message-circle.svg" alt="微信" width="20" height="20">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
