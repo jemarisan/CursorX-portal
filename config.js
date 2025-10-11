@@ -34,7 +34,7 @@ const CONFIG = {
     
     // 下载信息
     download: {
-        fileSize: '2.3M',
+        fileSize: '2.4M',
         systemRequirements: 'macOS 12.0 或更高版本 • 支持 Apple Silicon 和 Intel 芯片',
         downloadUrls: {
             universal: 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.0.dmg',
