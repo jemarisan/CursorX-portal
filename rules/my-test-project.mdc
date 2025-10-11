@@ -1,0 +1,28 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+第二阶段demo测试要求：
+
+1、把文本编辑器、备忘录、pages文稿等macOS原生应用的所有场景测试通过，具体场景包括（以文本编辑器为例）
+1.1 打开空的文本编辑器，系统文本插入点会出现在空白文档的首行首列，xpoint应该同步出现在相同位置
+1.2 开始在空白文档中输入文字，系统文本插入点会随着文字的输入跟着往右移，xpoint应该同步跟随
+1.3 文本一路输入直到换行时，系统文本插入点会随着文字换行也换行，xpoint应该同步跟随
+1.4 多行文本的情况下，键盘的上下左右按键可以操纵系统文本插入点在字里行间变换位置，xpoint应该同步根素
+
+第三阶段core的测试要求
+
+测试方案要求：
+全程自动化测试，自动化点击自动化操作自动化分析日志，自动化参考剖析inputsourcepro、参考分析技术文档（见下方链接），自动优化方案迭代
+测试案例执行完成后，需要回到cursor应用。
+
+第四阶段app-v1.0的测试要求
+
+
+测试发现问题后，应该<全面剖析inputsourcepro项目代码>后，再通盘考虑方案是否存在优化空间，<不要轻易写容错代码>，修改代码之后要注意编译通过
+
+技术文档：
+https://www.chromium.org/developers/design-documents/accessibility/#TOC-How-Chrome-detects-the-presence-of-Assistive-Technology
+https://www.electronjs.org/zh/docs/latest/tutorial/accessibility
+https://developer.apple.com/documentation/accessibility
