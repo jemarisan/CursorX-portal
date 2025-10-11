@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CursorX v1.2.0 发布说明</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .release-notes {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        .version-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .release-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .release-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-icon {
+            font-size: 24px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 32px;
+            transition: transform 0.2s;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="release-notes">
+        <a href="index_optimized.html" class="back-link">← 返回首页</a>
+        
+        <span class="version-badge">最新版本</span>
+        <h1 class="release-title">CursorX v1.2.0</h1>
+        <p class="release-date">发布日期：2025年10月11日</p>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">✨</span>
+                新功能
+            </h2>
+            <ul class="feature-list">
+                <li class="feature-item"><strong>输入法样式功能</strong> - 为不同输入法设置专属颜色，一眼识别当前输入法</li>
+                <li class="feature-item"><strong>16种精美预设颜色方案</strong> - 精心设计的配色方案，满足不同审美需求</li>
+                <li class="feature-item"><strong>智能样式选择器</strong> - 可视化预览效果，8x2网格布局，选择更直观</li>
+                <li class="feature-item"><strong>HUD Dark模式支持</strong> - 新增深色模式，适应不同使用场景</li>
+                <li class="feature-item"><strong>智能图标适配算法</strong> - 自动调整图标显示效果，确保在任何背景下清晰可见</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🐛</span>
+                问题修复
+            </h2>
+            <ul class="feature-list">
+                <li class="feature-item">修复Caps Lock绿色光晕被裁剪的问题</li>
+                <li class="feature-item">修复按下Caps Lock时xpoint位置跳跃的问题</li>
+                <li class="feature-item">修复边框宽度设置无效的问题</li>
+                <li class="feature-item">修复样式选择器空白显示的问题</li>
+                <li class="feature-item">优化HUD图标在Dark模式下的可见性</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚡</span>
+                性能优化
+            </h2>
+            <ul class="feature-list">
+                <li class="feature-item">优化图标渲染性能，智能缓存减少重复计算</li>
+                <li class="feature-item">改进HUD显示逻辑，降低资源消耗</li>
+                <li class="feature-item">优化图标类型检测算法，提升响应速度</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📊</span>
+                技术细节
+            </h2>
+            <ul class="feature-list">
+                <li class="feature-item"><strong>架构改进</strong> - 采用事件驱动架构，提升响应性和可维护性</li>
+                <li class="feature-item"><strong>模块化设计</strong> - 新增SmartIconAdapter、StylePresetProvider等核心模块</li>
+                <li class="feature-item"><strong>苹果设计风格</strong> - 遵循macOS设计规范，提供原生体验</li>
+                <li class="feature-item"><strong>文件大小优化</strong> - 从4.82 MB减小到2.35 MB，下载更快</li>
+            </ul>
+        </div>
+
+        <a href="https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.0.dmg" class="download-btn" download="CursorX-v1.2.0.dmg">
+            立即下载 v1.2.0
+        </a>
+    </div>
+</body>
+</html>
+

@@ -14,7 +14,7 @@ const CONFIG = {
     // 基本信息
     app: {
         name: 'CursorX',
-        version: 'v1.0.0',
+        version: 'v1.2.0',
         description: '让你工作更舒服的温柔贴心光标小工具',
         tagline: '像不存在一样完美的光标伴侣',
         logo: {
@@ -34,12 +34,12 @@ const CONFIG = {
     
     // 下载信息
     download: {
-        fileSize: '4.82 MB',
+        fileSize: '2.3M',
         systemRequirements: 'macOS 12.0 或更高版本 • 支持 Apple Silicon 和 Intel 芯片',
         downloadUrls: {
-            universal: 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg',
-            'apple-silicon': 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg',
-            intel: 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-1.0.0.dmg'
+            universal: 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.0.dmg',
+            'apple-silicon': 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.0.dmg',
+            intel: 'https://raw.githubusercontent.com/jemarisan/CursorX-portal/main/downloads/CursorX-v1.2.0.dmg'
         }
     },
     
